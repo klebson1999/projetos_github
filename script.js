@@ -1,4 +1,4 @@
-function (x,y,c) {
-    var resultado = x*x + 2*y-4 + c;
-    return(resultado);
+function soma (x,y,c) {
+    var resultado = x*x + y + c;
+    return resultado;
 }
