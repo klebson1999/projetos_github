@@ -1,2 +1,0 @@
-# Arquivo aleatório
-lorem ipsilum
