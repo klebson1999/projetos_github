@@ -1,13 +1,6 @@
-/* NOTAS DE ATUALIZAÇÃO
-# Falta inserir os índecis dinâmicos! => Aula 280
-#
-#
-#
-*/
-// CONSTRUÇÃO DAS CLASSES
+// CONSTRUÇÃO DA CLASSE 'DESPESA'
 class Despesa {
-    constructor(id, dataenvio, ano, mes, dia, tipo, descricao, valor) {
-        this.id = id
+    constructor(dataenvio, ano, mes, dia, tipo, descricao, valor) {
         this.dataenvio = dataenvio
         this.ano = ano
         this.mes = mes 
@@ -27,12 +20,43 @@ class Despesa {
     }
 }
 
+// CONSTRUÇÃO DA CLASSE BD
+
 class Bd {
-    /*getProximoId(){
-        let proximoId = localStorage.getItem('id')
-    }*/
+    // CRIANDO PIMEIRA CHAVE CASO NÃO EXISTA
+    constructor() {
+        let id = localStorage.getItem('ID')
+        if(id === null) {
+            localStorage.setItem('ID', '')
+        }
+    } 
+    // GRAVANDO ARQUIVO COM CHAVE ÚNICA
     gravar(d) {
-        localStorage.setItem('despesa', JSON.stringify(d))
+        localStorage.setItem(geraStringAleatoria(), JSON.stringify(d))
+    }
+
+    recuperarTodosRegistros() {
+
+        // Array de despesas
+        let despesas = Array()
+        for (let i = 1; i < localStorage.length; i++) {
+
+            // set iteration key name
+            let key = localStorage.key(i)
+          
+            // use key name to retrieve the corresponding value
+            let value = JSON.parse(localStorage.getItem(key))
+            
+            // console.log the iteration key and value
+             despesas.push(value)
+            
+             
+          }
+          return despesas
+    }
+
+    pesquisar(despesa) {
+        console.log('despesa')
     }
 }
 
@@ -51,7 +75,6 @@ function cadastrarDepesas() {
     let valor = document.getElementById('valor')
 
     let despesa = new Despesa(
-        id = geraStringAleatoria(),
         dataenvio = moment(Date.now()).format(),
         ano.value, 
         mes.value, 
@@ -60,11 +83,31 @@ function cadastrarDepesas() {
         descricao.value, 
         valor.value)
     
+
     if(despesa.validarDados()) {
        bd.gravar(despesa)
-       $('#sucessogravacao').modal('show')
+       
+       $('#modalrRegistroDespesa').modal('show')
+       document.getElementById('modal_title').innerHTML = 'Gravação bem sucedida'
+       document.getElementById('modal_title_div').className = 'modal-header text-success'
+       document.getElementById('modal_conteudo').innerHTML = 'Despesa cadastrada com sucesso'
+       document.getElementById('modal_btn_div').innerHTML = ''
+
+       ano.value = ''
+       mes.value = ''
+       dia.value = ''
+       tipo.value = ''
+       descricao.value = ''
+       valor.value = ''
+   
     } else {
-        $('#errogravacao').modal('show')
+
+        $('#modalrRegistroDespesa').modal('show')
+        document.getElementById('modal_title').innerHTML = 'Erro na gravação da despesa'
+        document.getElementById('modal_title_div').className = 'modal-header text-danger'
+        document.getElementById('modal_conteudo').innerHTML = 'Erro na gravação, verifique se todos os campos foram preenchidos corretamente.'
+        document.getElementById('modal_btn_div').innerHTML = '<button type="button" class="btn btn-danger" data-dismiss="modal" id="modal_btn">Voltar e Corrigir</button>'
+       
     }   
 }
 
@@ -76,4 +119,58 @@ function geraStringAleatoria() {
         idtemp += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
     }
     return idtemp;
+}
+
+function carregaListaDespesa() {
+
+    let despesas = Array()
+    despesas = bd.recuperarTodosRegistros()
+    // Selecionando o elemento tbody da tabela
+    let listaDespesas = document.getElementById('listaDepesas')
+    
+    
+    // Percorrer o array despesas, listando cada despesa de forma dinâmica
+    despesas.forEach(function(d) {
+
+        // Criando a liha (tr)
+        let linha = listaDespesas.insertRow()
+        // Criar as colunas (td)
+        linha.insertCell(0).innerHTML = moment(d.dataenvio).format('DD/MM/YYYY HH:mm:ss')
+        if(d.dia < 10) {
+            d.dia = '0'+ d.dia
+        }
+        if(d.mes < 10) {
+            d.mes = '0'+ d.mes
+        } 
+        linha.insertCell(1).innerHTML = `${d.dia}/${d.mes}/${d.ano}`
+        switch(d.tipo) {
+            case '1': d.tipo = 'Alimentação'
+                break
+            case '2': d.tipo = 'Educação'
+                break
+            case '3': d.tipo = 'Lazer'
+                break
+            case '4': d.tipo = 'Saúde'
+                break
+            case '5': d.tipo = 'Transporte'
+                break            
+        }
+        linha.insertCell(2).innerHTML = d.tipo
+        linha.insertCell(3).innerHTML = d.descricao
+        linha.insertCell(4).innerHTML = `R$ ${d.valor}`
+    })
+}
+
+
+function pesquisarDespesas() {
+    let dataenvio = ''
+    let ano = document.getElementById('ano').value
+    let mes = document.getElementById('mes').value
+    let dia = document.getElementById('dia').value
+    let tipo = document.getElementById('tipo').value
+    let descricao = document.getElementById('descricao').value
+    let valor = document.getElementById('valor').value
+
+    let despesa = new Despesa(dataenvio, ano, mes, dia, tipo, descricao, valor)
+    bd.pesquisar(despesa)
 }

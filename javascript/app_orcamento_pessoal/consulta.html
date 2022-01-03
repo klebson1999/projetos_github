@@ -2,7 +2,7 @@
 	<head>
     <meta charset="utf-8" />
 		<title>Orçamento pessoal</title>
-
+    <link rel="shortcut icon" href="calculator-solid.svg" type="image/x-icon"/>
 		<!-- Bootstrap início -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -14,12 +14,12 @@
     <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
+    <!-- Outros Scripts e Biblioteca-->
     <script src="app.js"></script>
+    <script src="moment.js"></script>
 	</head>
 
-  <body>
-
-
+  <body onload="carregaListaDespesa()">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
       <div class="container">
         <a class="navbar-brand" href="#">
@@ -55,6 +55,10 @@
           <select class="form-control" id="ano">
             <option value="">Ano</option>
             <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
           </select>
         </div>
 
@@ -77,12 +81,12 @@
         </div>
         
         <div class="col-md-2">
-          <input type="text" class="form-control" placeholder="Dia" id="dia" />
+          <input type="number" class="form-control" placeholder="Dia" id="dia" min="1" max="31" />
         </div>
 
         <div class="col-md-6">
           <select class="form-control" id="tipo">
-            <option>Tipo</option>
+            <option value="">Tipo</option>
             <option value="1">Alimentação</option>
             <option value="2">Educação</option>
             <option value="3">Lazer</option>
@@ -98,11 +102,11 @@
         </div>
 
         <div class="col-md-2">
-          <input type="text" class="form-control" placeholder="Valor" id="valor" />
+          <input type="text" class="form-control" placeholder="Valor" id="valor"/>
         </div>
 
         <div class="col-md-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary" onclick="pesquisarDespesas()">
             <i class="fas fa-search"></i>
           </button>
         </div>
@@ -113,6 +117,7 @@
           <table class="table" >
             <thead>
               <tr>
+                <th>Envio</th>
                 <th>Data</th>
                 <th>Tipo</th>
                 <th>Descrição</th>
@@ -121,7 +126,7 @@
               </tr>
             </thead>
 
-            <tbody>
+            <tbody id="listaDepesas">
             </tbody>
           </table>
         </div>
