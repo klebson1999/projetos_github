@@ -1,0 +1,45 @@
+body {
+    background-color: #FDFEFF;
+}
+.img_menu {
+    height: 80px;
+}
+
+
+.badge-new {
+    color: #FFF;
+}
+
+.secao_inicial {
+    height: 60vh;
+    width: 100%;
+    background-image: url(img/background_secao_1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.secao_inicial_interna {
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.secao_inicial_interna a {
+    color: #fff;
+}
+
+.secao_inicial_interna h4 {
+    border-left: solid 5px #1E88E5;
+    padding: 5px;
+}
+
+
+.container {
+    width: 100%;
+}
+@media only screen and (min-width: 993px)
+{.container {width: 85%;}}
