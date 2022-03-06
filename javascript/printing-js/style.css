@@ -1,8 +1,10 @@
 body {
     background-color: #FDFEFF;
 }
-.img_menu {
-    height: 80px;
+.img-menu {
+    height: auto;
+    color: #1E88E5;
+    width: 100%;
 }
 
 
@@ -39,7 +41,17 @@ body {
 
 
 .container {
-    width: 90%;
+    width: 100%;
 }
 @media only screen and (min-width: 993px)
 {.container {width: 85%;}}
+
+@media only screen and (max-width: 600px)
+{
+    .container {box-shadow: none;}
+    .img-menu {
+        height: 80%;
+       
+    }
+    
+}
