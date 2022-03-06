@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Processo.com</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="funcoes.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+  <div class="container z-depth-3">
+    <header class="mobile">
+      <!-- Cabeçalho -->
+      <div style="display: flex;flex-direction: row;">
+        <a href="index.html" class="brand-logo"><img src="img/post_add_white_24dp.svg" alt="" srcset=""
+            class="img_menu"></a>
+        <div class="flow-text">
+          <h4>Meu Processo Seletivo.com</h4>
+          <h5>Aqui você pode se informar e se inscrever</h5>
+        </div>
+        <!-- Menu -->
+      </div>
+      <nav class="hide-on-med-and-down">
+        <div class="nav-wrapper blue darken-1 center">
+          <ul class="right ">
+            <li><a href="index.html"><i class="material-icons right">home</i>Home</a< /li>
+            <li><a href="#"><i class="material-icons right">history</i><span
+                  class="badge white-text">2</span>Atualizações</a></li>
+            <li><a href="#"><i class="material-icons right">cloud_download</i>Documentos</a></li>
+            <li><a href="#"><i class="material-icons right">person</i>Área Restrita</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h3 class="center">Formulário de Inscrição</h3>
+      <p class="red-text">Preencha todos os campos corretamente e depois você será encaminhado para <u>Àrea
+          Restrita.</u> Lá você enviará os documentos restante confome o edital divulgado, dentro do período de tempo
+        estabelecido.</p>
+      <p class="red-text"><b>Apenas preencher esse formulário <u>não</u> inscreve você no processo seletivo. É preciso o
+          cadastro <u>completo</u>.</b></p>
+      <li><b>Antes de iniciar é preciso que você leia e concorde com nossa <a href="#modal1" class="modal-trigger">Política de Privacidade</a>.</b></li>
+      <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <h4>Política de Privacidade</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat"><i class="material-icons prefix blue-text left">close</i>NÃO CONCORDO</a>
+          <a href="#!" class="modal-close waves-effect waves-green btn blue"><i class="material-icons prefix white-text left">done_all</i>LI E CONCORDO</a>
+        </div>
+      </div>
+      <br>
+      <br>
+      <form id="form_principal" class="col s12" style="min-height: 50vh;">
+        <div id="inscricao" class="row">
+          <div class="input-field col l4 s10 center">
+            <i class="material-icons prefix blue-text">person</i>
+            <input placeholder="Insira seu nome completo" id="nome" type="text" class="validate">
+            <label for="first_name">Nome Completo</label>
+            <span class="helper-text" data-error="Ops! Preencha o campo corretamete"
+              data-success="Preenchido Corretamente!"></span>
+          </div>
+          <div class="input-field col l3 s10">
+            <i class="material-icons prefix blue-text center">description</i>
+            <input placeholder="Apenas números" id="cpf" type="text" class="validate" data-length="11" maxlength="11">
+            <label for="first_name">CPF</label>
+            <span class="helper-text" data-error="Ops! Preencha o campo corretamete"
+              data-success="Preenchido Corretamente!"></span>
+          </div>
+          <div class="input-field col l5 s10 center">
+            <i class="material-icons prefix blue-text">how_to_reg</i>
+            <input placeholder="Pesquise a vaga que você deseja" type="text" id="vagainscricao" class="autocomplete">
+            <label for="vagainscricao">Vaga para inscrição</label>
+          </div>
+          <div class="input-field col l6 s10 center">
+            <i class="material-icons prefix blue-text">email</i>
+            <input placeholder="Insira um e-mail válido" type="email" id="emailinscricao" class="validate">
+            <span class="helper-text" data-error="Ops! Preencha o campo corretamete"
+              data-success="Preenchido Corretamente!"></span>
+            <label for="emailinscricao">E-mail de cadastro</label>
+          </div>
+          <div class="input-field col l6 s10 center">
+            <i class="material-icons prefix blue-text">phone</i>
+            <input placeholder="Apenas números" type="tel" id="celinscricao" class="validate" data-length="11"
+              maxlength="11">
+            <span class="helper-text" data-error="Ops! Preencha o campo corretamete"
+              data-success="Preenchido Corretamente!"></span>
+            <label for="cellinscricao">Número para contato</label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light blue" type="submit" name="action">ENVIAR
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </main>
+    <br>
+    <br>
+    <footer>
+      <div class="blue darken-1 white-text footer-copyrigh">
+        <h6 style="display: flex; height: 50px; justify-content: center; align-items: center;margin: 0;">Copyright ©
+          Processo.com 2022&ensp;|&ensp;<a href="" class="white-text"> Política de Privacidade</a></h6>
+      </div>
+    </footer>
+  </div>
+</body>
+<script>
+
+</script>
+
+</html>
