@@ -49,7 +49,10 @@ $("#btnPrint").live("click", function () {
   $(document).ready(function(){
     $('.modal').modal();
   });
-        
+  
+  $(document).ready(function(){
+    $('.tabs').tabs();
+  });
 
   $(document).ready(function(){
     $('input.autocomplete').autocomplete({

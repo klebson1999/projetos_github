@@ -2,7 +2,6 @@ body {
     background-color: #FDFEFF;
 }
 .img-menu {
-    height: auto;
     color: #1E88E5;
     width: 100%;
 }
@@ -34,7 +33,7 @@ body {
     color: #fff;
 }
 
-.secao_inicial_interna h4 {
+.secao_inicial_interna h5 {
     border-left: solid 5px #1E88E5;
     padding: 5px;
 }
