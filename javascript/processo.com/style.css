@@ -38,19 +38,21 @@ body {
     padding: 5px;
 }
 
+#checktermocontainer {
+    pointer-events: none;
+}
 
 .container {
-    width: 100%;
+    width: auto;
 }
-@media only screen and (min-width: 993px)
+
+@media only screen and (min-width: 800px)
 {.container {width: 85%;}}
 
-@media only screen and (max-width: 600px)
+@media only screen and (max-width: 799px)
 {
     .container {box-shadow: none;}
-    .img-menu {
-        height: 80%;
-       
-    }
+    .img-menu {height: 80%;}
+    .container-mobile{padding: 0 15px;} 
     
 }

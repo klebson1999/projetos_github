@@ -1,114 +1,63 @@
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /* Loop through a collection of all HTML elements: */
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /* Make an HTTP request using the attribute value as the file name: */
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /* Remove the attribute, and call this function once more: */
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
-        }
-      }
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /* Exit the function: */
-      return;
-    }
+// Funções complementares do Materiallize iniciadas com o carregamento da página
+$(document).ready(function () {
+  // PÁGINA INICIAL
+  // Menu lateral, com propriedade 'edge' para posicionar na lateral direita.
+  $('.sidenav').sidenav({
+    edge: 'right'
+  });
+
+
+  // PÁGINA DE INSCRIÇÃO
+  // Carregando modal com termos de privacidade
+  $('.modal').modal();
+  // Carregando checked se aceitar os termos
+  $('#termoceito').click(function(){
+  $('#checktermo').attr('checked', 'checked')});
+  // Retirando o checked se os termos não forem aceitos
+  $('#termonaoceito').click(function(){
+  $('#checktermo').removeAttr('checked')});
+  // Contando caracteres do CPF na página inscrição
+  $('input#inscricaocpf').characterCounter();
+  // Validando CPF e exibindo mensagem
+  $('#inscricaocpf').focusout(function () {
+
+    let strCPF = document.getElementById('inscricaocpf').value
+    let Soma;
+    let Resto;
+    Soma = 0;
+    if (strCPF == "00000000000") return alert('CPF inválido');
+
+    for (i = 1; i <= 9; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+    Resto = (Soma * 10) % 11;
+
+    if ((Resto == 10) || (Resto == 11)) Resto = 0;
+    if (Resto != parseInt(strCPF.substring(9, 10))) return alert('CPF inválido');
+
+    Soma = 0;
+    for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+    Resto = (Soma * 10) % 11;
+
+    if ((Resto == 10) || (Resto == 11)) Resto = 0;
+    if (Resto != parseInt(strCPF.substring(10, 11))) return alert('CPF inválido');
+    return alert(strCPF);
+
   }
-}
+  )
+  // Contando caracteres do Telefone na página inscrição
+  $('input#celinscricao').characterCounter();
+  // Iniciando o Select na página de inscrição
+  $('select').formSelect()
 
-$("#btnPrint").live("click", function () {
-    var divContents = $("#text").html();
-    var printWindow = window.open('', '', 'height=2480,width=3508');
-    printWindow.document.write('<html><head><title>Impressão</title>')
-    printWindow.document.write('</head><body>')
-    printWindow.document.write(divContents);
-    printWindow.document.write('</body></html>')
-    printWindow.document.close()
-    printWindow.print()
-  });
+});
 
-  $('.dropdown-trigger').dropdown();
-  $(document).ready(function() {
-    $('input#cpf, textarea#textarea2').characterCounter();
-  });
-  
-  $(document).ready(function() {
-    $('input#celinscricao, textarea#textarea2').characterCounter();
-  });
-
-  $(document).ready(function(){
-    $('.modal').modal();
-  });
-  
-  $(document).ready(function(){
-    $('.tabs').tabs();
-  });
-
-  $(document).ready(function(){
-    $('input.autocomplete').autocomplete({
-      data: {
-        "Assistente Social":null,
-        "Auxiliar de Biblioteca":null,
-        "Auxiliar de Informática":null,
-        "Auxiliar de Desenvolvimento Infantil(Atuar em Escolas e Creches) Berçário e crianças de 4 e 5 anos":null,
-        "Cuidador para Educação Especial":null,
-        "Engenheiro Civil":null,
-        "Intérprete de Língua Brasileira de Sinais – LIBRAS":null,
-        "Ledor/Transcritor de Braille":null,
-        "Monitor de Educação Especial":null,
-        "Monitor da EJA 1º ao 5º Ano":null,
-        "Monitor de Arte":null,
-        "Monitor de Ciências":null,
-        "Monitor de Dança":null,
-        "Monitor de Educação Física":null,
-        "Monitor de Geografia":null,
-        "Monitor de História":null,
-        "Monitor de Língua Inglesa":null,
-        "Monitor de Língua Portuguesa":null,
-        "Monitor de Matemática":null,
-        "Monitor de Música":null,
-        "Monitor Polivalente – Educação Infantil":null,
-        "Monitor Polivalente - Ensino Fundamental I 1º ao 5º Ano":null,
-        "Monitor/Instrutor de Língua Brasileira de Sinais (LIBRAS) – Educação Infantil e de 1º ao 9º ano":null,
-        "Monitor de Ônibus Escolar (Zona Urbana) Escola Douglas Apratto":null,
-        "Monitor de Ônibus Escolar (Zona Urbana) Escola Santa Luzia":null,
-        "Monitor de Ônibus Escolar (Zona Urbana) Escola Manoel Soares":null,
-        "Monitor de Ônibus Escolar (Zona Urbana) Escola Barão de Penedo":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Konrad":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Prosperidade":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Pescoço":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Palmeira Alta":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Castanho Grande":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Espigão":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Imbira I e II":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Ilha das Canas":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Campo Grande":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Tapera":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Catrapó":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Carapina":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Marizeiro":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Cerquinha das Laranjas":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Marituba de Cima":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Marituba do Peixe":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Ponta Mofina":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Tabuleiro dos Negros":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Capela/Murici":null,
-        "Monitor de Ônibus Escolar (Zona Rural) Povoado Cooperativa I e II Núcleo":null,
-        "Motorista de ônibus":null,
-        "Nutricionista":null,
-        "Psicóloga":null,
-        "Técnico em Construção Civil":null
-      },
-    });
-  });
-     
+// Funcão para imrprimir fixa de inscrição
+// $("#btnPrint").live("click", function () {
+//     var divContents = $("#text").html();
+//     var printWindow = window.open('', '', 'height=2480,width=3508');
+//     printWindow.document.write('<html><head><title>Impressão</title>')
+//     printWindow.document.write('</head><body>')
+//     printWindow.document.write(divContents);
+//     printWindow.document.write('</body></html>')
+//     printWindow.document.close()
+//     printWindow.print()
+//   });
