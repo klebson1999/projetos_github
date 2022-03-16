@@ -14,7 +14,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
 
 <body>
@@ -65,7 +64,7 @@
         estabelecido.</p>
       <p class="red-text"><b>Apenas preencher esse formulário <u>não</u> inscreve você no processo seletivo. É preciso o
           cadastro <u>completo</u>.</b></p>
-      <p><b>Antes de iniciar é preciso que você leia e concorde com nossa <a href="#modal1"
+      <p><b>Antes de iniciar é preciso que você leia e concorde com nossa <a id="link-politica" href="#modal1"
             class="modal-trigger">Política de Privacidade</a>.</b></p>
       <br>
       <form id="form_principal" class="col s12" style="min-height: 50vh;">
@@ -75,9 +74,8 @@
               <input id="checktermo" type="checkbox" class="filled-in blue-text" disabled="disabled" />
               <span>Termo de Privacidade e Aceitação no processo</span>
             </label>
-
           </div>
-          <div class="input-field col l4 s10 center">
+          <div class="input-field col l4">
             <i class="material-icons prefix blue-text">person</i>
             <input placeholder="Insira seu nome completo" id="inscricaonome" type="text" class="validate">
             <label for="inscricaonome">Nome completo</label>
@@ -89,8 +87,7 @@
             <input placeholder="Apenas números" id="inscricaocpf" type="text" class="validate" data-length="11"
               maxlength="11">
             <label for="inscricaocpfe">CPF</label>
-            <span class="helper-text red-text" data-error="Ops! Preencha o campo corretamete"
-              data-success="Preenchido Corretamente!"></span>
+            <span id="textocpfvalidado" class="helper-text"></span>
           </div>
           <div class="input-field col l5 s10">
             <i class="material-icons prefix blue-text">how_to_reg</i>
@@ -104,14 +101,16 @@
             </select>
             <label>Vaga para inscrição</label>
           </div>
-          <div class="input-field col l6 s10 center">
+          <div class="input-field col l6 s10">
             <i class="material-icons prefix blue-text">email</i>
             <input placeholder="Insira um e-mail válido" type="email" id="emailinscricao" class="validate">
-            <span class="helper-text" data-error="Ops! Preencha o campo corretamete"
+              <span class="helper-text">Esse será o e-mail utilizado para acessar á <u>Àrea
+                Restrita.</u> e envio de informações.</span>
+              <span class="helper-text" data-error="Ops! Preencha o e-mail corretamete"
               data-success="Preenchido Corretamente!"></span>
             <label for="emailinscricao">E-mail de cadastro</label>
           </div>
-          <div class="input-field col l6 s10 center">
+          <div class="input-field col l6 s10">
             <i class="material-icons prefix blue-text">phone</i>
             <input placeholder="Apenas números" type="tel" id="celinscricao" class="validate" data-length="11"
               maxlength="11">
@@ -124,6 +123,16 @@
           <i class="material-icons right">send</i>
         </button>
       </form>
+      <div id="modal1" class="modal modal-fixed-footer">
+        <div id="conteudo-modal-politica" class="modal-content">    
+        </div>
+        <div class="modal-footer">
+          <a id="termonaoceito" href="#!" class="modal-close waves-effect waves-green btn-flat"><i
+              class="material-icons prefix blue-text left">close</i>NÃO CONCORDO</a>
+          <a id="termoceito" href="#!" class="modal-close waves-effect waves-green btn blue"><i
+              class="material-icons prefix white-text left">done_all</i>LI E CONCORDO</a>
+        </div>
+      </div>
     </main>
     <br>
     <br>
@@ -134,22 +143,11 @@
       </div>
     </footer>
   </div>
-  <div id="modal1" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4>Política de Privacidade</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a id="termonaoceito" href="#!" class="modal-close waves-effect waves-green btn-flat"><i
-          class="material-icons prefix blue-text left">close</i>NÃO CONCORDO</a>
-      <a id="termoceito" href="#!" class="modal-close waves-effect waves-green btn blue"><i
-          class="material-icons prefix white-text left">done_all</i>LI E CONCORDO</a>
-    </div>
-  </div>
 </body>
 <script>
 
 
+  
 </script>
 
 </html>

@@ -9,46 +9,76 @@ $(document).ready(function () {
 
   // PÁGINA DE INSCRIÇÃO
   // Carregando modal com termos de privacidade
-  $('.modal').modal();
+  $('.modal').modal()
   // Carregando checked se aceitar os termos
   $('#termoceito').click(function(){
-  $('#checktermo').attr('checked', 'checked')});
+  $('#checktermo').attr('checked', 'checked')})
   // Retirando o checked se os termos não forem aceitos
   $('#termonaoceito').click(function(){
-  $('#checktermo').removeAttr('checked')});
+  $('#checktermo').removeAttr('checked')})
+  // Formatando nome da inscrição corretamente. Retirando caracteres especiais e deixando em maiúsculo.
+  $('#inscricaonome').focusout(function() {
+
+    let strnome = document.getElementById('inscricaonome')
+    let df = strnome.value
+    strnome.value = df.normalize("NFD").replace(/[^\w\s]/gi, '').toUpperCase()
+  })
   // Contando caracteres do CPF na página inscrição
   $('input#inscricaocpf').characterCounter();
   // Validando CPF e exibindo mensagem
   $('#inscricaocpf').focusout(function () {
 
     let strCPF = document.getElementById('inscricaocpf').value
-    let Soma;
-    let Resto;
-    Soma = 0;
-    if (strCPF == "00000000000") return alert('CPF inválido');
+    let Soma
+    let Resto
+    Soma = 0
+    if (strCPF != '') {
+    if (strCPF == "00000000000") return cpfvalidado(2)
 
-    for (i = 1; i <= 9; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+    for (i = 1; i <= 9; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i)
     Resto = (Soma * 10) % 11;
 
-    if ((Resto == 10) || (Resto == 11)) Resto = 0;
-    if (Resto != parseInt(strCPF.substring(9, 10))) return alert('CPF inválido');
+    if ((Resto == 10) || (Resto == 11)) Resto = 0
+    if (Resto != parseInt(strCPF.substring(9, 10))) return cpfvalidado(2)
 
-    Soma = 0;
-    for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
-    Resto = (Soma * 10) % 11;
+    Soma = 0
+    for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i)
+    Resto = (Soma * 10) % 11
 
-    if ((Resto == 10) || (Resto == 11)) Resto = 0;
-    if (Resto != parseInt(strCPF.substring(10, 11))) return alert('CPF inválido');
-    return alert(strCPF);
-
-  }
-  )
+    if ((Resto == 10) || (Resto == 11)) Resto = 0
+    if (Resto != parseInt(strCPF.substring(10, 11))) return cpfvalidado(2)
+    return cpfvalidado(1)
+    } else {
+      cpfvalidado(3)
+    }
+  })
   // Contando caracteres do Telefone na página inscrição
-  $('input#celinscricao').characterCounter();
+  $('input#celinscricao').characterCounter()
   // Iniciando o Select na página de inscrição
   $('select').formSelect()
+  // Política de Privacidade
+  $( "#conteudo-modal-politica" ).load( "politica-privacidade.html")
 
 });
+  
+
+
+
+// Validação do CPF
+function cpfvalidado(x) {
+  let cpftextspan = document.getElementById('textocpfvalidado')
+  if (x == 1) { 
+    cpftextspan.classList.remove('red-text')
+    cpftextspan.innerHTML = 'CPF Válido'
+    cpftextspan.classList.add('green-text')
+  } else if (x == 2) {
+    cpftextspan.classList.remove('green-text')
+    cpftextspan.innerHTML = 'CPF Inválido'
+    cpftextspan.classList.add('red-text')
+  } else if (x == 3) {
+    cpftextspan.innerHTML = ''
+  }
+}
 
 // Funcão para imrprimir fixa de inscrição
 // $("#btnPrint").live("click", function () {
