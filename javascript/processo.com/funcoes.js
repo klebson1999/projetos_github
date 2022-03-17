@@ -57,7 +57,7 @@ $(document).ready(function () {
   // Iniciando o Select na página de inscrição
   $('select').formSelect()
   // Política de Privacidade
-  $( "#conteudo-modal-politica" ).load( "politica-privacidade.html")
+  $( "#conteudo-modal-politica" ).load( "termos-processo.html")
   // Inicialização do acordeon política de privacidade
   $(document).ready(function(){
     $('.collapsible').collapsible();
