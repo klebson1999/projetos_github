@@ -58,6 +58,10 @@ $(document).ready(function () {
   $('select').formSelect()
   // Política de Privacidade
   $( "#conteudo-modal-politica" ).load( "politica-privacidade.html")
+  // Inicialização do acordeon política de privacidade
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
 
 });
   
