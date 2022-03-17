@@ -6,7 +6,7 @@ $(document).ready(function () {
     edge: 'right'
   });
 
-
+  datamensal(1)
   // PÁGINA DE INSCRIÇÃO
   // Carregando modal com termos de privacidade
   $('.modal').modal()
@@ -64,8 +64,15 @@ $(document).ready(function () {
   });
 
 });
-  
-
+ // Data do processo dinâmica 
+function datamensal(x) {
+  let dataMes = new Date().getMonth()
+  let dataAno = new Date().getFullYear()
+  let dataInicial = '01/'+dataMes+'/'+dataAno
+  let dataFinal = '15/'+dataMes+'/'+dataAno
+  document.getElementById('dataI').innerHTML = dataInicial
+  document.getElementById('dataF').innerHTML = dataFinal
+}
 
 
 // Validação do CPF
