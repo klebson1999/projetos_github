@@ -6,10 +6,11 @@ $(document).ready(function () {
     edge: 'right'
   });
 
-  datamensal(1)
-  // PÁGINA DE INSCRIÇÃO
-  // Carregando modal com termos de privacidade
+   // PÁGINA DE INSCRIÇÃO
+   // Carregando a classe dos modal
   $('.modal').modal()
+  // Carregando modal com os Termos do Processo
+  $( "#conteudo-modal-termos" ).load( "termos-processo.html")
   // Carregando checked se aceitar os termos
   $('#termoceito').click(function(){
   $('#checktermo').attr('checked', 'checked')})
@@ -54,18 +55,14 @@ $(document).ready(function () {
   })
   // Contando caracteres do Telefone na página inscrição
   $('input#celinscricao').characterCounter()
-  // Iniciando o Select na página de inscrição
+  // Iniciando o select de vagas na página de inscrição
   $('select').formSelect()
-  // Política de Privacidade
-  $( "#conteudo-modal-politica" ).load( "termos-processo.html")
-  // Inicialização do acordeon política de privacidade
-  $(document).ready(function(){
-    $('.collapsible').collapsible();
-  });
-
+  // Exibindo botão depois que todos os campos forem preenchidos
+  
 });
- // Data do processo dinâmica 
-function datamensal(x) {
+
+ // Data de início e termino das inscrições de forma dinâmica
+function datamensal() {
   let dataMes = new Date().getMonth()
   let dataAno = new Date().getFullYear()
   let dataInicial = '01/'+dataMes+'/'+dataAno
@@ -73,7 +70,6 @@ function datamensal(x) {
   document.getElementById('dataI').innerHTML = dataInicial
   document.getElementById('dataF').innerHTML = dataFinal
 }
-
 
 // Validação do CPF
 function cpfvalidado(x) {

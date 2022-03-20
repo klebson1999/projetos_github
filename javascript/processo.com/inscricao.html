@@ -64,9 +64,8 @@
         estabelecido.</p>
       <p class="red-text"><b>Apenas preencher esse formulário <u>não</u> inscreve você no processo seletivo. É preciso o
           cadastro <u>completo</u>.</b></p>
-      <p><b>Antes de iniciar é preciso que você leia os <a id="link-politica" href="#modal1"
-            class="modal-trigger">Termos do Processo Seletivo </a>.</b></p>
-      <br>
+      <p><b>Antes de iniciar é preciso que você leia e concorde com os <a id="link-politica" href="#modal1"
+            class="modal-trigger">Termos do Processo Seletivo</a>.</b></p>
       <form id="form_principal" class="col s12" style="min-height: 50vh;">
         <div id="inscricao" class="row">
           <div id="checktermocontainer" class="col l12 s12">
@@ -75,7 +74,7 @@
               <span>Termos do Processo Seletivo</span>
             </label>
           </div>
-          <div class="input-field col l4">
+          <div class="input-field col l4 s10">
             <i class="material-icons prefix blue-text">person</i>
             <input placeholder="Insira seu nome completo" id="inscricaonome" type="text" class="validate">
             <label for="inscricaonome">Nome completo</label>
@@ -104,27 +103,27 @@
           <div class="input-field col l6 s10">
             <i class="material-icons prefix blue-text">email</i>
             <input placeholder="Insira um e-mail válido" type="email" id="emailinscricao" class="validate">
+            <label for="emailinscricao">E-mail de cadastro</label>
               <span class="helper-text">Esse será o e-mail utilizado para acessar á <u>Àrea
                 Restrita.</u> e envio de informações.</span>
               <span class="helper-text" data-error="Ops! Preencha o e-mail corretamete"
               data-success="Preenchido Corretamente!"></span>
-            <label for="emailinscricao">E-mail de cadastro</label>
           </div>
           <div class="input-field col l6 s10">
             <i class="material-icons prefix blue-text">phone</i>
             <input placeholder="Apenas números" type="tel" id="celinscricao" class="validate" data-length="11"
               maxlength="11">
+            <label for="cellinscricao">Número para contato</label>
             <span class="helper-text" data-error="Ops! Preencha o campo corretamete"
               data-success="Preenchido Corretamente!"></span>
-            <label for="cellinscricao">Número para contato</label>
           </div>
         </div>
-        <button class="btn waves-effect waves-light blue" type="submit" name="action">ENVIAR
+        <a id="" class="btn waves-effect waves-light blue modal-trigger" href="#modal2">CONTINUAR
           <i class="material-icons right">send</i>
-        </button>
+        </a>
       </form>
       <div id="modal1" class="modal modal-fixed-footer">
-        <div id="conteudo-modal-politica" class="modal-content">    
+        <div id="conteudo-modal-termos" class="modal-content">    
         </div>
         <div class="modal-footer">
           <a id="termonaoceito" href="#!" class="modal-close waves-effect waves-green btn-flat"><i
@@ -133,9 +132,18 @@
               class="material-icons prefix white-text left">done_all</i>LI E CONCORDO</a>
         </div>
       </div>
+      <div id="modal2" class="modal modal-fixed-footer">
+        <div id="conteudo-modal-confirmacao" class="modal-content">    
+        </div>
+        <div class="modal-footer">
+          <a id="termonaoceito" href="#!" class="modal-close waves-effect waves-green btn-flat"><i
+              class="material-icons prefix blue-text left">back</i>VOLTAR</a>
+          <a id="termoceito" href="#!" class="modal-close waves-effect waves-green btn blue"><i
+              class="material-icons prefix white-text left">send</i>ENVIAR</a>
+        </div>
+      </div>
+
     </main>
-    <br>
-    <br>
     <footer>
       <div class="blue darken-1 white-text footer-copyrigh">
         <h6 style="display: flex; height: 50px; justify-content: center; align-items: center;margin: 0;">Copyright ©
@@ -145,9 +153,6 @@
   </div>
 </body>
 <script>
-
-
-  
 </script>
 
 </html>
