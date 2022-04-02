@@ -10,7 +10,7 @@ $(document).ready(function () {
    // Carregando a classe dos modal
   $('.modal').modal()
   // Carregando modal com os Termos do Processo
-  $( "#conteudo-modal-termos" ).load( "termos-processo.html")
+  $( "#conteudo-modal-termos" ).load("termos-processo.html")
   // Carregando checked se aceitar os termos
   $('#termoceito').click(function(){
   $('#checktermo').attr('checked', 'checked')})
@@ -58,8 +58,15 @@ $(document).ready(function () {
   // Iniciando o select de vagas na página de inscrição
   $('select').formSelect()
   // Exibindo botão depois que todos os campos forem preenchidos
+   $('#btnSend').click(
+    function() {
+    $('#conteudo-modal-confirmacao').load('confirmacaoInscricao.html')
+    
   
-});
+})
+
+})
+
 
  // Data de início e termino das inscrições de forma dinâmica
 function datamensal() {
