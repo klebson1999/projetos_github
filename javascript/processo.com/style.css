@@ -63,7 +63,7 @@ body {
 
 @media only screen and (max-width: 799px)
 {
-    .container {box-shadow: none;}
+    .container {box-shadow: none; height: 100vh;}
     .img-menu {height: 80%;}
     .container-mobile{padding: 0 15px;} 
     
