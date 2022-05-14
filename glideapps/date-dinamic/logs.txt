@@ -1,0 +1,245 @@
+commit 4997349f43ba2c7209dc911ed5e18663864a69a3
+Author: Clebson <klebson1999@gmail.com>
+Date:   Fri Feb 25 20:22:38 2022 -0300
+
+    Correção no formato do retorno
+
+commit 97461f76cea19b7a7dbb1c3c34e0b0fba2708548
+Author: Clebson <klebson1999@gmail.com>
+Date:   Thu Feb 24 23:10:26 2022 -0300
+
+    Alteração do README.MD
+
+commit 4bcad503d4b2c81c6fdc36dcf3ac6f5b0f52283b
+Author: Clebson <klebson1999@gmail.com>
+Date:   Thu Feb 24 22:59:28 2022 -0300
+
+    Inserção dos comentários
+
+commit af8d83dcb046dfdbfb03de8db16de8687f8a944b
+Author: Clebson <klebson1999@gmail.com>
+Date:   Thu Feb 24 22:43:49 2022 -0300
+
+    Atualização de 24/02/2022
+
+commit 50e49c935074f494ebee03baca7ac4737f70e571
+Author: Clebson <klebson1999@gmail.com>
+Date:   Thu Feb 24 22:43:30 2022 -0300
+
+    Atualização de 24/02/2022
+
+commit c8409223724556275fc6c364b9ebf31284ee41e3
+Author: Clebson <klebson1999@gmail.com>
+Date:   Thu Feb 24 22:35:16 2022 -0300
+
+    Atualização de 24/02/2022
+
+commit e9d1f1d524ccd294740787d27856348849365c04
+Author: Clebson <klebson1999@gmail.com>
+Date:   Thu Feb 24 22:34:54 2022 -0300
+
+    Atualização de 24/02/2022
+
+commit 675afdcb9e8af9e31d2d6d22a6cdbdce020c1d8f
+Author: Clebson <klebson1999@gmail.com>
+Date:   Thu Feb 24 22:32:42 2022 -0300
+
+    Atualização de 24/02/2022
+
+commit 5280d4599c45897ac2902b36998e5648b052dd28
+Author: Clebson <klebson1999@gmail.com>
+Date:   Thu Feb 24 21:55:39 2022 -0300
+
+    Atualização de 24/02/2022
+
+commit 28d22308e582c01a5bc8eaa82a11be2553f54dec
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 23:15:48 2022 -0300
+
+    Fazendo cálculo
+
+commit 18296794b668ff7409478ad969676280fa417a5c
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 23:13:53 2022 -0300
+
+    Fazendo cálculo
+
+commit 09d05b30010a47d38ad85d09d8dddc40081ebfb6
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 23:12:42 2022 -0300
+
+    Fazendo cálculo
+
+commit 5512b4eeec139c5dcca4cbb257495e46352e0e36
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 23:11:26 2022 -0300
+
+    Fazendo cálculo
+
+commit 5f71a6a30fda7a9d4d19a70977ac39db84929402
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 23:05:21 2022 -0300
+
+    Fazendo cálculo
+
+commit 4ecf3ce8fb0118ceb9616ebd73536fff5e5f2004
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 23:02:45 2022 -0300
+
+    Fazendo cálculo
+
+commit e7c95a8e7caf38ad8f7ecd882567c9fe35a88ae1
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 22:54:50 2022 -0300
+
+    Alteração nos arquivos
+
+commit 0398894d24052e8cd69e0e39fa5afdf3a0bb11bd
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 22:47:14 2022 -0300
+
+    Alteração nos arquivos
+
+commit 6cd97fa78fdb74bb76520bc5f957a038c0d422e1
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 22:43:14 2022 -0300
+
+    Nome das variáveis
+
+commit 48da5c98d04a3cc6f29525d3a296bd492ca19034
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 22:30:49 2022 -0300
+
+    Migração dos arquivos
+
+commit 00d0f3b3b7561043499e400a7e1d64913bd5566f
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 22:29:38 2022 -0300
+
+    Migração dos arquivos
+
+commit cdd3b2d988becefbbe2807fea42801a6fbd23eb0
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 22:24:49 2022 -0300
+
+    Adicionando glide.json
+
+commit d23b41b51fb56aae07c89db654e40e3654e2e494
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 22:22:18 2022 -0300
+
+    Adicionando Biblioteca Moment.js
+
+commit e4505c8d2e52126baad802a29b69cb5287621d43
+Author: Clebson <klebson1999@gmail.com>
+Date:   Mon Feb 21 22:18:33 2022 -0300
+
+    Adicionando Biblioteca Moment.js
+
+commit 043a57b59c58b3d86d74c3c24085f48cbb3ffa74
+Author: Clebson <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:56:03 2022 -0300
+
+    Alteração de Arquivos
+
+commit a4292fe11864685db89c9d1ec86c7796504e0af8
+Author: Clebson <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:40:34 2022 -0300
+
+    Alteração de Arquivos
+
+commit 7375fa1459f1cd6dedbf22b54452aa7e19f20c1f
+Author: Clebson Rosendo <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:34:32 2022 -0300
+
+    Create data-calc
+
+commit 0fb42d4ab3944ee3e8e254a0d5d2761096e2b4c6
+Author: Clebson Rosendo <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:33:11 2022 -0300
+
+    Add files via upload
+
+commit 8d4ba80f2ed76c0dc203f9bc1337d7514edba9b5
+Author: Clebson Rosendo <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:32:35 2022 -0300
+
+    Create README.md
+
+commit 1b3672d537974c688143920febde6e3f1f96073b
+Author: Clebson Rosendo <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:32:01 2022 -0300
+
+    Delete README.md
+
+commit 6dddd087a48dd2176249686c94cd67705e05ffb8
+Author: Clebson Rosendo <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:31:48 2022 -0300
+
+    Create README.md
+
+commit 752782c03d48fe73e9b49e4bc945c2f7c5a271fb
+Author: Clebson Rosendo <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:29:55 2022 -0300
+
+    Delete data-cal
+
+commit a5ffe9a709a3bf73d13db6d9581cb18c4e90dfd2
+Author: Clebson Rosendo <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:28:26 2022 -0300
+
+    Create data-cal
+
+commit cda41da9ef50259e0573135494ca22d4cef4beff
+Author: Clebson Rosendo <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:27:56 2022 -0300
+
+    Delete glide-experimental-code-substring directory
+
+commit 93a4802b20ce700aa7a3c1df91ad1833f20fad6b
+Author: Clebson Rosendo <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:27:43 2022 -0300
+
+    Delete data-calc
+
+commit 141061db7054b808497d0feb5450235592d5eac7
+Author: Clebson Rosendo <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:27:31 2022 -0300
+
+    Update README.md
+
+commit 678ade967ee45bab0f031047aaf7ddd921addc2f
+Author: Clebson Rosendo <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:25:57 2022 -0300
+
+    Create data-calc
+
+commit 39526de262edbbc9aa17701e3115bc721f79b9f6
+Author: Clebson Rosendo <klebson1999@gmail.com>
+Date:   Thu Feb 17 21:23:31 2022 -0300
+
+    Update README.md
+
+commit 27a60e3a49ed26a9b25d34df6802f393141dfd3e
+Author: klebson1999 <klebson1999@gmail.com>
+Date:   Thu Feb 17 20:59:55 2022 -0300
+
+    Add files via upload
+
+commit ceb200db27bfd906cb0ede37e5915476daa51319
+Author: klebson1999 <klebson1999@gmail.com>
+Date:   Thu Feb 17 20:58:15 2022 -0300
+
+    Update README.md
+
+commit 4abd26cd0cddd2452c05103089e1d741e7b60647
+Author: klebson1999 <klebson1999@gmail.com>
+Date:   Thu Feb 17 15:05:52 2022 -0300
+
+    Update README.md
+
+commit 0bd85f3deff047c43d4a0f49cac934fe61d99646
+Author: klebson1999 <klebson1999@gmail.com>
+Date:   Thu Feb 17 14:41:53 2022 -0300
+
+    Initial commit

@@ -1,0 +1,18 @@
+[
+  {
+    "kind": "column",
+    "name": "Date dinamic",
+    "description": "Valor da data dinâmmico",
+    "author": "Clebson Rosendo <klebson1999@gmail.com>",
+    "params": [
+      {
+        "name": "dia",
+        "displayName": "Dia",
+        "type": "number"
+      }
+    ],
+    "result": {
+      "type": "date-time"
+    }
+  }
+]
