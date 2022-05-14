@@ -20,4 +20,4 @@ Acesse a [documentação oficial](https://docs.glideapps.com/all/topics/computed
 
 ## Data dinâmica
 
-Esse é apenas um pequeno script para realizar manter uma data dinâmica, alterando apenas o mês e ano.
+Esse é apenas um pequeno script para manter uma data dinâmica, alterando apenas o mês e ano.
