@@ -1,0 +1,23 @@
+[
+  {
+    "kind": "column",
+    "name": "Time Calc",
+    "description": "Retorna a diferença em períodos de tempo.",
+    "author": "Clebson Rosendo <klebson1999@gmail.com>",
+    "params": [
+      {
+        "name": "inicial",
+        "displayName": "Data Inicial",
+        "type": "date-time"
+      },
+      {
+        "name": "final",
+        "displayName": "Data Final",
+        "type": "date-time"
+      }
+    ],
+    "result": {
+      "type": "string"
+    }
+  }
+]
