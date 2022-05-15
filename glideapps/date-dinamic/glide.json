@@ -7,7 +7,7 @@
     "params": [
       {
         "name": "dia",
-        "displayName": "Dia",
+        "displayName": "Dia do mês",
         "type": "number"
       }
     ],
