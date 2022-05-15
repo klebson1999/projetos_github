@@ -1,4 +1,4 @@
-## glide-app-scripts
+## glideapps-date-dinamic-end
 
 ### O objetivo desse repositório é adicionar uma pequena função implementada em [glide apps](https://www.glideapps.com/).
 

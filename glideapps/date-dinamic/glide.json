@@ -1,8 +1,8 @@
 [
   {
     "kind": "column",
-    "name": "Date dinamic",
-    "description": "Valor da data dinâmmico",
+    "name": "Data Final",
+    "description": "Dia final de entrega do relatório.",
     "author": "Clebson Rosendo <klebson1999@gmail.com>",
     "params": [
       {
@@ -12,7 +12,7 @@
       }
     ],
     "result": {
-      "type": "date-time"
+      "type": "string"
     }
   }
 ]
