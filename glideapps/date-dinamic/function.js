@@ -1,6 +1,3 @@
-// Library moment
-const moment = require('moment')
-
 // Data atual 
 const dateToday = moment(Date.now())
 
