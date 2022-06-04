@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>jQuery | Selecionando elementes - Parte 1</h1>
+
+    <input type="text" placeholder="input 1">
+    <input type="text" placeholder="input 2">
+    <input type="text" placeholder="input 3">
+
+    <div class="lista1">
+        <div class="exemplo2">div 1</div>
+        <div class="exemplo2">div 2</div>
+        <div class="exemplo2">div 3</div>
+    </div>
+
+    <ul class="lista1">
+        <li class="">Opção 1</li>
+        <li class="exemplo2">Opção 2</li>
+        <li class="exemplo2">Opção 3</li>
+    </ul>
+
+    <ul class="lista2">
+        <li class="exemplo2">Opção 1</li>
+        <li class="exemplo2">Opção 2</li>
+        <li>Opção 3</li>
+    </ul>
+
+</body>
+    <script>
+   // Selecionando elementos
+   console.log($('.lista1 .exemplo2 '))
+   // Primeiro
+   console.log($('.lista1 .exemplo2:first'))
+   // Último
+   console.log($('.lista1 .exemplo2:last'))
+   // Pares
+   console.log($('.lista1 .exemplo2:even'))
+   // ìmpares
+   console.log($('.lista1 .exemplo2:odd'))
+
+
+    </script>
+</html>

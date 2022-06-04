@@ -1,0 +1,13 @@
+DirectoryIndex ./app/index.php
+Options +Includes -Indexes 
+Options +FollowSymLinks
+
+ErrorDocument 403 "<h1>ACESSO NEGADO<h1>"
+ErrorDocument 404 "<h1>PAGINA NAO ENCONTRADA<h1>"
+ErrorDocument 500 /erros/404.html
+
+<files ~ "^.*\.([Hh][Tt][Aa])">
+    order allow,deny
+    deny from all
+    satisfy all
+</files>
