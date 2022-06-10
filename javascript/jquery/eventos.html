@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>jQuery</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script>
+		$(document).ready(() => {
+			/*	$('#onload').html('Página carregada')
+				$(window).scroll(() => {
+					$('#scroll').html('Scroll acionado')
+				})
+				$(window).resize(() => {
+					$('#window').html('Resize Window funcionando').css('background-color', 'red')
+				})
+				$('#btn1').mousedown(() => {
+					$('#div2').css('background-color', 'green')
+				})
+				$('#btn1').click(() => {
+					$('#div2').css('background-color', 'blue')
+				})
+				$('#btn2').dblclick(() => {
+					$('#div2').css('background-color', 'yellow')
+				})
+				$(window).mousemove(e => {
+					$('#contexMenu').offset({ top: e.offsetX, left: e.offsetY })
+				})
+	
+				$('#teclado').keydown(() => {
+					$('#resultadoTecla').html('Tecla pressionada')
+				})
+				$('#teclado').keyup(() => {
+					$('#resultadoTecla').html('Tecla liberada')
+				})
+				$(window).keypress((e) => {
+					let div = $('#teclado').val()
+					$('#div1').text(div)
+				}) */
+				
+		})
+
+	</script>
+</head>
+
+<body>
+
+	<div id="topo">
+		<h1>Eventos</h1>
+	</div>
+
+	<div>
+		<h3>Browser</h3>
+		<span>Onload: </span><span id="onload">?</span><br />
+		<span>Scroll: </span><span id="scroll">?</span><br />
+		<span>Resize Window: </span><span id="window">?</span>
+		<div id="div1" style="height: 400px; width: 100%; border: solid 1px; overflow-y: scroll;">
+		</div>
+		<h3>Teclado</h3>
+		<span>Nome:</span>
+		<input id="teclado" type="text" />
+		<hr />
+
+		<h3>Mouse</h3>
+		<button id="btn1" type="button">Clique aqui</button>
+		<button id="btn2" type="button">Clique aqui 2x</button>
+		<div id="div2" style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px">
+		</div>
+		<span>Resultado do evento sobre a div</span>
+
+
+
+		<hr />
+
+
+		<span id="resultadoTecla">Resultado do evento sobre o input</span>
+		<hr />
+
+		<h3>Formulário</h3>
+		<form>
+			<span>Nome:</span>
+			<input id="nome" type="text" />
+
+			<span>E-mail:</span>
+			<input type="text" />
+
+			<span>Motivo do contato:</span>
+			<select>
+				<option value="">-- Selecione --</option>
+				<option value="duvida">Dúvida</option>
+				<option value="sugestao">Sugestão</option>
+			</select>
+
+			<button type="button">Enviar</button>
+		</form>
+	</div>
+</body>
+
+</html>

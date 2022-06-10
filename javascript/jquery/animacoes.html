@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>jQuery</title>
+    <style>
+        .div {
+            width: 80px;
+            height: 80px;
+            border: solid 1px #000;
+            background-color: #aaa;
+        }
+    </style>
+
+    <script>
+        $(document).ready(() => {
+            $('button').on('click', () => {
+                $('#div1').animate({
+                    'width': '160px',
+                    'height': '160px',
+                    'margin-top': '200px',
+                    'margin-left': '200px',
+                    'border-radius': '50%'
+                },
+                    {
+                        duration: 3500,
+                        start: () => { console.log('animação iniciada') },
+                        complete: () => {
+                            $('#div2').animate({
+                                'width': '160px',
+                                'height': '160px',
+                                'margin-top': '20px',
+                                'margin-left': '60px',
+                                'border-radius': '50%'
+                            })
+                        }
+                    })
+            })
+
+
+
+        })
+    </script>
+</head>
+
+<body>
+
+    <button type="button">Iniciar animação</button>
+    <div id="div1" class="div"></div>
+    <div id="div2" class="div"></div>
+
+</body>
+
+</html>
