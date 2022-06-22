@@ -1,0 +1,207 @@
+Então, se recorda do nosso componente de layout? O que fica responsável dentro de Views, veja abaixo:
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>Twitter Clone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+ 
+ 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <!-- import do jQuery necessário: -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+ 
+    <link rel="stylesheet" href="/css/style.css"/>
+   
+    <title></title>
+</head>
+ 
+<body>
+    <?= $this->content() ?>
+</body>
+ 
+</html>
+Nele eu adicionei mais um import do jQuery, que é necessário para o uso do Ajax, até comentei a linha. Dessa forma, você terá acesso ao jQuery em todo o seu projeto!
+
+Feito isso, vamos fazer algumas mudanças no nosso form, vou deixar comentado o antigo e descomentado o mais novo:
+
+<form>
+                                <div class="input-group mb-3">
+                                    <input type="text" name="pesquisarPor" class="form-control" placeholder="Quem você está procurando?">
+                                    <div class="input-group-append">
+                                        <button id="btn_procurar" class="btn btn-primary" type="submit">Procurar</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- <form action="/quemSeguir" method="get">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="pesquisarPor" class="form-control" placeholder="Quem você está procurando?">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit">Procurar</button>
+                                    </div>
+                                </div>
+                            </form> -->
+A diferença entre eles é:
+
+1) a tag form, removi o action e o method
+
+2) e o button, adicionei um id, chamado btn_procurar
+
+Feito isso, logo no início da página, fiz o seguinte script:
+
+<script>
+    $(document).ready(() => {
+        $('#btn_procurar').on('click', (e) => {
+            e.preventDefault()
+            let pesquisarPor = $('form').serialize()
+            // console.log(pesquisarPor)
+            $.ajax({
+                type: "GET",
+                url="/quemSeguir",
+                data: pesquisarPor,
+                success: (dados) => {},
+                error: error => {console.log(error)}
+            })
+        })
+    })
+</script>
+Ou seja, todo o componente ficará nessa estrutura:
+
+<script>
+    $(document).ready(() => {
+        $('#btn_procurar').on('click', (e) => {
+            e.preventDefault()
+            let pesquisarPor = $('form').serialize()
+            // console.log(pesquisarPor)
+            $.ajax({
+                type: "GET",
+                url="/quemSeguir",
+                data: pesquisarPor,
+                success: (dados) => {},
+                error: error => {console.log(error)}
+            })
+        })
+    })
+</script>
+ 
+<nav class="navbar navbar-expand-lg menu">
+    <div class="container">
+      <div class="navbar-nav">
+        <a class="menuItem" href="/timeline">
+            Home
+        </a>
+ 
+        <a class="menuItem" href="/sair">
+            Sair
+        </a>
+            <img src="/img/twitter_logo.png" class="menuIco" />
+      </div>
+    </div>
+</nav>
+ 
+<div class="container mt-5">
+    <div class="row pt-2">
+        
+        <div class="col-md-3">
+ 
+            <div class="perfil">
+                <div class="perfilTopo">
+ 
+                </div>
+ 
+                <div class="perfilPainel">
+                    
+                    <div class="row mt-2 mb-2">
+                        <div class="col mb-2">
+                            <span class="perfilPainelNome">Nome do Usuário</span>
+                        </div>
+                    </div>
+ 
+                    <div class="row mb-2">
+ 
+                        <div class="col">
+                            <span class="perfilPainelItem">Tweets</span><br />
+                            <span class="perfilPainelItemValor">0</span>
+                        </div>
+ 
+                        <div class="col">
+                            <span class="perfilPainelItem">Seguindo</span><br />
+                            <span class="perfilPainelItemValor">0</span>
+                        </div>
+ 
+                        <div class="col">
+                            <span class="perfilPainelItem">Seguidores</span><br />
+                            <span class="perfilPainelItemValor">0</span>
+                        </div>
+ 
+                    </div>
+ 
+                </div>
+            </div>
+ 
+        </div>
+ 
+        <div class="col-md-6">
+            
+            <div class="row mb-2">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <form>
+                                <div class="input-group mb-3">
+                                    <input type="text" name="pesquisarPor" class="form-control" placeholder="Quem você está procurando?">
+                                    <div class="input-group-append">
+                                        <button id="btn_procurar" class="btn btn-primary" type="submit">Procurar</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- <form action="/quemSeguir" method="get">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="pesquisarPor" class="form-control" placeholder="Quem você está procurando?">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit">Procurar</button>
+                                    </div>
+                                </div>
+                            </form> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+        <?php foreach($this->view->usuarios as $indice_arr => $usuario) { ?>
+            <div class="row mb-2">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <?=$usuario['nome']?>
+                                </div>
+                                <div class="col-md-6 d-flex justify-content-end">
+                                    <div>
+                                        <?php if($usuario['seguindo_sn'] == 0){ ?>
+                                            <a href="/acao?acao=seguir&id_usuario=<?=$usuario['id']?>" class="btn btn-success">Seguir</a>
+                                        <?php }?>
+ 
+                                        <?php if($usuario['seguindo_sn'] == 1){?>
+                                            <a href="/acao?acao=deixar_de_seguir&id_usuario=<?=$usuario['id']?>" class="btn btn-danger">Deixar de seguir</a>
+                                        <?php }?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php }?>
+            
+        </div>
+    </div>
+</div>
